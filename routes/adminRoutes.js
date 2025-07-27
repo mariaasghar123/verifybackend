@@ -64,7 +64,7 @@ router.delete("/delete/:id", async (req, res) => {
 
     // Optionally, delete file from /uploads folder too
     const fs = require("fs");
-    const filePath = `{uploads/${document.file}`; // adjust according to your DB field
+    const filePath = `uploads/${document.file}`; // adjust according to your DB field
     if (fs.existsSync(filePath)) {
       fs.unlinkSync(filePath);
     }
