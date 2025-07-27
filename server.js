@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const bodyParser = require("body-parser")
 
 dotenv.config();
 const app = express();
@@ -16,6 +17,7 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
+app.use(bodyParser.json())
 
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
